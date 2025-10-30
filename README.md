@@ -99,3 +99,12 @@ Initialize the protocol with global parameters:
 
 #### `finalize_epoch`
 - Close an epoch, unpause the pool, and optionally **sweep dust fees** to treasury
+
+  
+### 'deposit_insurance'
+- **Deposit USDC into chosen tranche (senior=0, junior=1):**
+
+- Enforces minimum deposit amounts
+- Applies protocol and referral fees
+- Creates FIFO lot with timestamp
+- Checks per-user deposit cap
