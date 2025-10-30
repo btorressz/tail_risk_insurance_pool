@@ -72,4 +72,30 @@ Coverage periods with defined parameters:
 ---
 
 
----
+## 🧾 Program Instructions
+
+### 🔧 Admin Operations
+
+#### `initialize`
+Initialize the protocol with global parameters:
+- Treasury address
+- Fee rates (protocol & referral)
+- Deposit caps and minimums
+- Lockup periods
+- Severity curve coefficients
+- Tranche weights
+
+#### `set_paused`
+- Emergency pause/unpause deposits and withdrawals
+
+#### `set_policy`
+- Update payout policy and epoch cap
+
+#### `set_curve_and_weights`
+- Adjust severity curve parameters and tranche weightings
+
+#### `start_epoch`
+- Create a new coverage epoch with time bounds
+
+#### `finalize_epoch`
+- Close an epoch, unpause the pool, and optionally **sweep dust fees** to treasury
