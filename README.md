@@ -215,4 +215,54 @@ These constants are foundational to maintaining program safety, efficiency, and 
 
 ___
 
+## Example Severity Curve
+
+This example illustrates how the quadratic severity curve works:
+
+- **Formula:** `severity = a*x² + b*x + c`, with a minimum floor applied
+- **Input:** Oracle reports 50 BPS severity
+- **Amplified Curve:** `a*(50²) + b*50 + c = 200 BPS`
+- **Floor Applied:** `max(200, 1000) = 1000 BPS (10%)`
+- **Resulting Payout:** 10% of the pool is distributed as the insurance payout
+
+---
+
+## Events
+
+The program emits the following events to support transparency and observability:
+
+- `Initialized`
+- `Paused`
+- `Deposited`
+- `Withdrawn`
+- `ProtocolFeeTaken`
+- `ReferralFeeTaken`
+- `EpochStarted`
+- `EventTriggered`
+- `EpochFinalized`
+- `UserPayout`
+
+---
+
+## Security Considerations
+
+- **Oracle Trust**  
+  Only oracles explicitly authorized in the allowlist can trigger insurance events.
+
+- **Reentrancy Protection**  
+  A processing flag is used to ensure that no overlapping payout executions can occur.
+
+- **Lockup Enforcement**  
+  FIFO (First-In, First-Out) lots enforce time-based lockups for deposits and withdrawals.
+
+- **Claim Receipts**  
+  Each claim is tracked with a receipt to ensure users cannot claim multiple times for the same event.
+
+- **Pause Mechanism**  
+  Admins can pause deposits, withdrawals, and other state-changing actions during emergencies.
+
+- **Parameter Bounds**  
+  Input values (fees, caps, curve coefficients) are validated to prevent incorrect or malicious configurations.
+
+
 
