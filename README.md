@@ -157,4 +157,41 @@ Calculates net deposit after fees.
 ### `quote_withdraw`
 Checks if withdrawal amount is available.
 
+___
+
+## State Accounts
+
+### **State (Global)**
+- Admin and treasury addresses  
+- Fee rates and caps  
+- Severity curve parameters  
+- Tranche weights  
+- Pause/processing flags  
+- Total deposited tracking  
+
+### **UserPosition**
+- Per-user per-tranche balances  
+- FIFO lots arrays (max 16 each)  
+- Withdrawable amounts  
+- Last deposit timestamp  
+- Referrer tracking  
+
+### **Epoch**
+- Time bounds (start/end)  
+- Stake snapshot at trigger  
+- Total payouts processed  
+- Severity and cap parameters  
+- Trigger/close status  
+- Evidence hash and timestamp  
+
+### **ClaimReceipt**
+- One per user per epoch  
+- Tracks claimed amount  
+- Prevents double-claiming  
+
+### **OracleList**
+- Allowlist of authorized oracle keys  
+- Enable/disable flag  
+
+---
 ---
