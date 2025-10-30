@@ -48,4 +48,28 @@ This protocol implements a **decentralized insurance pool** where:
 - Optional **referral fees**
 - **Dust sweeping** to treasury on epoch finalization
 
+  __
+
+
+  ## 🧮 Core Concepts
+
+### Fixed-Point Math
+- All amounts use `1e6` fixed-point arithmetic  
+  (`SCALE = 1_000_000`)  
+  Ensures precise calculations without floating-point math
+
+### Epochs
+Coverage periods with defined parameters:
+- Start / End timestamps (or rolling)
+- Severity measurements from oracles
+- Snapshot-based stake tracking
+- **Evidence hash** for audit trails
+
+### Lots
+- Deposits are tracked as **FIFO lots** with timestamps
+- Enables lockup enforcement and **mature withdrawal logic**
+
+---
+
+
 ---
