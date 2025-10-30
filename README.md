@@ -136,3 +136,25 @@ Initialize the protocol with global parameters:
 - Records evidence hash and timestamp
 
   ---
+
+  ## View Functions
+
+### `pool_stats`
+Returns current pool state and balances.
+
+### `user_position_view`
+Returns user's deposits and withdrawable amounts per tranche.
+
+### `epoch_stats`
+Returns epoch parameters, payouts, and status.
+
+### `quote_user_payout`
+Simulates potential payout for a user in a triggered epoch.
+
+### `quote_deposit`
+Calculates net deposit after fees.
+
+### `quote_withdraw`
+Checks if withdrawal amount is available.
+
+---
