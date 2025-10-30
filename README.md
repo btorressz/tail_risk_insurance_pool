@@ -17,3 +17,35 @@ This protocol implements a **decentralized insurance pool** where:
 - **Epoch-based Coverage** allows time-bounded or rolling coverage periods.
 
 ---
+
+
+## 🔑 Key Features
+
+### 🏦 Dual-Tranche System
+- **Senior Tranche**: Lower risk exposure, weighted protection
+- **Junior Tranche**: Higher risk exposure, weighted protection
+- Configurable **tranche weights** determine risk distribution
+
+### 📊 Flexible Payout Policies
+- `Proportional`: Pro-rata distribution based on stake
+- `Capped`: Per-user caps on maximum payout
+- `EpochBounded`: Total epoch liability caps
+
+### 📈 Quadratic Severity Curve
+- Configurable curve: `a*x² + b*x + c`
+- Severity floor ensures **minimum payouts**
+- Translates **oracle input** into payout percentage
+
+### 🔒 Security Features
+- **FIFO lockup** periods for withdrawals
+- **Deposit cooldowns** to prevent gaming
+- **Reentrancy guards** on critical operations
+- **Oracle allowlist** for event triggering
+- **Claim receipts** to prevent double-claiming
+
+### 💰 Fee Structure
+- **Protocol fees** on deposits
+- Optional **referral fees**
+- **Dust sweeping** to treasury on epoch finalization
+
+---
