@@ -134,3 +134,5 @@ Initialize the protocol with global parameters:
 - Transfers USDC payout
 - Pauses pool for claims processing
 - Records evidence hash and timestamp
+
+  ---
