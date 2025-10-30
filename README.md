@@ -194,4 +194,25 @@ ___
 - Enable/disable flag  
 
 ---
----
+
+## Configuration Limits
+
+This program defines several core configuration constants to manage its internal logic and safety. Here's a breakdown of what each one represents:
+
+- **Maximum Lots per Tranche (`MAX_LOTS = 16`)**  
+  Each user can have up to 16 separate deposit entries (called "lots") per tranche (Senior or Junior). These lots are tracked using a FIFO (First-In, First-Out) system to enforce lockups and manage withdrawals accurately. This limit prevents excessive storage usage and ensures fair queueing.
+
+- **Maximum Authorized Oracles (`MAX_ORACLES = 16`)**  
+  The program allows a maximum of 16 oracle addresses to be registered. These oracles are trusted data sources authorized to trigger events such as insurance payouts based on severity inputs. Limiting the number of oracles keeps the system lean and secure.
+
+- **Fixed-Point Precision Scale (`SCALE = 1_000_000`)**  
+  All numerical calculations in the program—especially those involving token amounts and percentages—use fixed-point arithmetic with 6 decimal places. For example, 1 USDC is represented as `1_000_000` to maintain high precision without using floating-point math, which is not supported natively in Solana smart contracts.
+
+- **Basis Points Denominator (`BPS_DENOM = 10_000`)**  
+  This value defines the base unit for working with basis points (BPS). Since 1 basis point = 0.01%, dividing by `10,000` allows percentage-based calculations (e.g., a fee of 250 BPS = 2.5%).
+
+These constants are foundational to maintaining program safety, efficiency, and accuracy in all math operations.
+
+___
+
+
