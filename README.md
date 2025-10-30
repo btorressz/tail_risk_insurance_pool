@@ -115,3 +115,13 @@ Initialize the protocol with global parameters:
 - Consumes matured FIFO lots
 - Enforces lockup requirements
 - Returns USDC to user
+
+###  'Oracle Operations'
+- trigger_event
+- Authorized oracle triggers a covered event:
+
+- Provides severity input (BPS)
+- Applies severity curve transformation
+- Snapshots pool state
+- Pauses pool for claims processing
+- Records evidence hash and timestamp
