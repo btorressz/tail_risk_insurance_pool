@@ -123,5 +123,14 @@ Initialize the protocol with global parameters:
 - Provides severity input (BPS)
 - Applies severity curve transformation
 - Snapshots pool state
+
+  ### 'payout_user'
+- Process individual user claim:
+
+- Calculates weighted stake (senior + junior)
+- Determines pro-rata share of total liability
+- Applies policy caps (user/epoch)
+- Creates claim receipt to prevent double-claiming
+- Transfers USDC payout
 - Pauses pool for claims processing
 - Records evidence hash and timestamp
