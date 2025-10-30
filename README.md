@@ -108,3 +108,10 @@ Initialize the protocol with global parameters:
 - Applies protocol and referral fees
 - Creates FIFO lot with timestamp
 - Checks per-user deposit cap
+
+###  'withdraw'
+- **Withdraw from a tranche after lockup period:**
+
+- Consumes matured FIFO lots
+- Enforces lockup requirements
+- Returns USDC to user
